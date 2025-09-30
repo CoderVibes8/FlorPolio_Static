@@ -43,7 +43,7 @@
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
     <div class="container position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.php" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">FlorPolio</h1>
       </a>
 
@@ -335,7 +335,7 @@
                 <h3>Custom Web Development</h3>
                 <p>We build modern, responsive websites tailored to your brand, ensuring seamless user experience and
                   high performance across devices.</p>
-                <a href="404.php" class="service-link">
+                <a href="404.html" class="service-link">
                   <span>Learn More</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -352,7 +352,7 @@
                 <h3>Desktop Software Development</h3>
                 <p>We create robust desktop applications that are intuitive, efficient, and tailored to meet your
                   business workflow needs.</p>
-                <a href="404.php" class="service-link">
+                <a href="404.html" class="service-link">
                   <span>Learn More</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -369,7 +369,7 @@
                 <h3>Project Management</h3>
                 <p>We provide effective project management strategies to ensure your projects are delivered on time, on
                   budget, and with high quality.</p>
-                <a href="404.php" class="service-link">
+                <a href="404.html" class="service-link">
                   <span>Learn More</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -386,7 +386,7 @@
                 <h3>DevOps</h3>
                 <p>We streamline your software delivery process with DevOps practices, automating deployments and
                   improving system reliability.</p>
-                <a href="404.php" class="service-link">
+                <a href="404.html" class="service-link">
                   <span>Learn More</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -615,7 +615,7 @@
                 to you as soon as possible.
               </p>
 
-              <form action="forms/contact.php" method="POST" class="php-email-form">
+              <form action="#" method="POST" class="php-email-form">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -783,66 +783,6 @@
       // DEBUG helpers (uncomment if you want console checks)
       // console.log('navLinks:', navLinks.map(l => l.getAttribute('href')));
       // console.log('sections:', sections.map(s => s.id));
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    const form = document.querySelector('.php-email-form');
-    const sendBtn = document.getElementById('sendBtn');
-    const btnText = sendBtn.querySelector('.btn-text');
-    const spinner = sendBtn.querySelector('.spinner-border');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Show loading
-      btnText.textContent = 'Sending...';
-      spinner.classList.remove('d-none');
-      sendBtn.disabled = true;
-
-      const formData = new FormData(form);
-
-      fetch(form.action, {
-          method: form.method,
-          body: formData
-        })
-        .then(res => res.text())
-        .then(data => {
-          data = data.trim();
-
-          // Hide loading
-          btnText.textContent = 'Send Message';
-          spinner.classList.add('d-none');
-          sendBtn.disabled = false;
-
-          if (data === 'success') {
-            Swal.fire({
-              icon: 'success',
-              title: 'Message Sent!',
-              text: 'Your message has been sent. Thank you!',
-            });
-            form.reset();
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: data.replace('error: ', ''),
-            });
-          }
-        })
-        .catch(err => {
-          btnText.textContent = 'Send Message';
-          spinner.classList.add('d-none');
-          sendBtn.disabled = false;
-
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong. Please try again.',
-          });
-          console.error(err);
-        });
     });
   </script>
 
